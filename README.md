@@ -24,7 +24,7 @@ sh ~/dotfiles/install.sh
 ## uninstall
 
 ```bash
-sh ~/.vim_runtime/uninstall.sh
+sh ~/dotfiles/uninstall.sh
 ```
 
 ## clean
