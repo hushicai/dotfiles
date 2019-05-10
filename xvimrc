@@ -1,0 +1,10 @@
+""""""""""""""""""""""""""""""""""""""""""""""""
+"  xvim                                        "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+" basic
+source ~/dotfiles/vim/basic.vim
+
+" navigation
+map <C-i> :xccmd goForwardInHistoryByCommand<CR>
+map <C-o> :xccmd goBackInHistoryByCommand<CR>

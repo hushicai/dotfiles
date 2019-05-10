@@ -8,6 +8,12 @@ mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
 
+# ideavim
+ln -sf ~/dotfiles/ideavimrc ~/.ideavimrc
+
+# xcode
+ln -sf ~/dotfiles/xvimrc ~/.xvimrc
+
 # zsh
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 if [ -d ~/.oh-my-zsh ]; then
