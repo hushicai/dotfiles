@@ -5,6 +5,12 @@ set -e
 rm -f ~/.vimrc
 rm -f ~/.config/nvim/init.vim
 
+# ideaVim
+rm -f ~/.ideavimrc
+
+# xvim
+rm -f ~/.xvimrc
+
 # zsh
 rm -f ~/.zshrc
 if [ -e ~/.oh-my-zsh ]; then
