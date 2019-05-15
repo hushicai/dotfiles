@@ -28,6 +28,10 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 call plug#end()
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => colorscheme
@@ -107,6 +111,41 @@ nmap s <Plug>(easymotion-overwin-f2)
 set completeopt-=preview
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+call deoplete#custom#source('LanguageClient',
+            \ 'min_pattern_length',
+            \ 2)
+call deoplete#custom#source('_',
+            \ 'disabled_syntaxes', ['String']
+            \ )
+call deoplete#custom#option('sources', {
+            \ 'javascript': ['LanguageClient'],
+            \ 'javascript.jsx': ['LanguageClient'],
+            \ 'vim': ['vim'],
+            \ 'zsh': ['zsh']
+            \})
+
+let g:deoplete#enable_profile = 1
+call deoplete#enable_logging('DEBUG', 'deoplete.log')
 " tab completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+"""""""""""""""""""""""""""""""
+"  LSP                        "
+"""""""""""""""""""""""""""""""
+let g:LanguageClient_serverCommands = {
+      \ 'javascript': ['flow', 'lsp', '--from', './node_modules/.bin'],
+      \ 'javascript.jsx': ['flow', 'lsp', '--from', './node_modules/.bin'],
+      \}
+let g:LanguageClient_loggingLevel = 'INFO'
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+let g:LanguageClient_rootMarkers = {
+            \'javascript': ['.flowconfig'],
+            \ 'javascript.jsx': ['.flowconfig']
+            \}
+
