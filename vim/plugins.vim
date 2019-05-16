@@ -133,7 +133,7 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 "  LSP                        "
 """""""""""""""""""""""""""""""
 let g:LanguageClient_serverCommands = {
-      \ 'javascript': ['flow', 'lsp'],
+      \ 'javascript': ['flow-language-server', '--stdio', '--try-flow-bin'],
       \ 'typescript': ['typescript-language-server', '--stdio'],
       \}
 
