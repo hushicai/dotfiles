@@ -20,6 +20,10 @@ Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -27,11 +31,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'sheerun/vim-polyglot'
 call plug#end()
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => colorscheme
@@ -120,13 +121,10 @@ call deoplete#custom#source('_',
             \ )
 call deoplete#custom#option('sources', {
             \ 'javascript': ['LanguageClient'],
-            \ 'javascript.jsx': ['LanguageClient'],
+            \ 'typescript': ['LanguageClient'],
             \ 'vim': ['vim'],
             \ 'zsh': ['zsh']
             \})
-
-let g:deoplete#enable_profile = 1
-call deoplete#enable_logging('DEBUG', 'deoplete.log')
 " tab completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
@@ -135,17 +133,15 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 "  LSP                        "
 """""""""""""""""""""""""""""""
 let g:LanguageClient_serverCommands = {
-      \ 'javascript': ['flow', 'lsp', '--from', './node_modules/.bin'],
-      \ 'javascript.jsx': ['flow', 'lsp', '--from', './node_modules/.bin'],
+      \ 'javascript': ['flow', 'lsp'],
+      \ 'typescript': ['typescript-language-server', '--stdio'],
       \}
-let g:LanguageClient_loggingLevel = 'INFO'
-let g:LanguageClient_autoStart = 1
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
 let g:LanguageClient_rootMarkers = {
             \'javascript': ['.flowconfig'],
-            \ 'javascript.jsx': ['.flowconfig']
+            \'typescript': ['tsconfig.json', 'jsconfig.json']
             \}
 
