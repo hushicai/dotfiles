@@ -1,6 +1,6 @@
 # vimrc
 
-## dependencis
+## dependencies
 
 * [fzf](https://github.com/junegunn/fzf)
 
@@ -12,6 +12,13 @@ brew install fzf
 
 ```bash
 brew install ripgrep
+```
+
+* ruby
+
+```bash
+brew install ruby
+gem install --user neovim
 ```
 
 ## install
