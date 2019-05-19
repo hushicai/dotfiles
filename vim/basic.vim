@@ -133,6 +133,10 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" local vimrc
+set exrc
+set secure
+
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
