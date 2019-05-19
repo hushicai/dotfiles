@@ -120,7 +120,9 @@ call deoplete#custom#source('_',
             \ )
 call deoplete#custom#option('sources', {
             \ 'javascript': ['LanguageClient'],
+            \ 'javascript.jsx': ['LanguageClient'],
             \ 'typescript': ['LanguageClient'],
+            \ 'typescript.jsx': ['LanguageClient'],
             \ 'vim': ['vim'],
             \ 'zsh': ['zsh']
             \})
@@ -131,9 +133,13 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 """""""""""""""""""""""""""""""
 "  LSP                        "
 """""""""""""""""""""""""""""""
+" let g:LanguageClient_loggingFile = '/tmp/languageClient.log'
+" let g:LanguageClient_loggingLevel = 'DEBUG'
 let g:LanguageClient_serverCommands = {
       \ 'javascript': ['flow-language-server', '--stdio', '--try-flow-bin'],
+      \ 'javascript.jsx': ['flow-language-server', '--stdio', '--try-flow-bin'],
       \ 'typescript': ['typescript-language-server', '--stdio'],
+      \ 'typescript.jsx': ['typescript-language-server', '--stdio'],
       \}
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
