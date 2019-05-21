@@ -206,3 +206,5 @@ inoremap jk <ESC>
 
 " clear last search highlight
 map <silent> <leader><space> :nohlsearch<CR>
+
+noremap zz :wq<CR>
