@@ -20,17 +20,17 @@ Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" Plug 'autozimu/LanguageClient-neovim', {
+    " \ 'branch': 'next',
+    " \ 'do': 'bash install.sh',
+    " \ }
+" if has('nvim')
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+  " Plug 'Shougo/deoplete.nvim'
+  " Plug 'roxma/nvim-yarp'
+  " Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 Plug 'sheerun/vim-polyglot'
 call plug#end()
 
@@ -109,44 +109,44 @@ nmap s <Plug>(easymotion-overwin-f2)
 """""""""""""""""""""""""""""""
 "  deoplete                   "
 """""""""""""""""""""""""""""""
-set completeopt-=preview
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-call deoplete#custom#source('LanguageClient',
-            \ 'min_pattern_length',
-            \ 2)
-call deoplete#custom#source('_',
-            \ 'disabled_syntaxes', ['String']
-            \ )
-call deoplete#custom#option('sources', {
-            \ 'javascript': ['LanguageClient'],
-            \ 'javascript.jsx': ['LanguageClient'],
-            \ 'typescript': ['LanguageClient'],
-            \ 'typescript.jsx': ['LanguageClient'],
-            \ 'vim': ['vim'],
-            \ 'zsh': ['zsh']
-            \})
-" tab completion
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" set completeopt-=preview
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+" call deoplete#custom#source('LanguageClient',
+            " \ 'min_pattern_length',
+            " \ 2)
+" call deoplete#custom#source('_',
+            " \ 'disabled_syntaxes', ['String']
+            " \ )
+" call deoplete#custom#option('sources', {
+            " \ 'javascript': ['LanguageClient'],
+            " \ 'javascript.jsx': ['LanguageClient'],
+            " \ 'typescript': ['LanguageClient'],
+            " \ 'typescript.jsx': ['LanguageClient'],
+            " \ 'vim': ['vim'],
+            " \ 'zsh': ['zsh']
+            " \})
+" " tab completion
+" inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 """""""""""""""""""""""""""""""
 "  LSP                        "
 """""""""""""""""""""""""""""""
 " let g:LanguageClient_loggingFile = '/tmp/languageClient.log'
 " let g:LanguageClient_loggingLevel = 'DEBUG'
-let g:LanguageClient_serverCommands = {
-      \ 'javascript': ['flow-language-server', '--stdio', '--try-flow-bin'],
-      \ 'javascript.jsx': ['flow-language-server', '--stdio', '--try-flow-bin'],
-      \ 'typescript': ['typescript-language-server', '--stdio'],
-      \ 'typescript.jsx': ['typescript-language-server', '--stdio'],
-      \}
+" let g:LanguageClient_serverCommands = {
+      " \ 'javascript': ['flow-language-server', '--stdio', '--try-flow-bin'],
+      " \ 'javascript.jsx': ['flow-language-server', '--stdio', '--try-flow-bin'],
+      " \ 'typescript': ['typescript-language-server', '--stdio'],
+      " \ 'typescript.jsx': ['typescript-language-server', '--stdio'],
+      " \}
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 
-let g:LanguageClient_rootMarkers = {
-            \'javascript': ['.flowconfig'],
-            \'typescript': ['tsconfig.json', 'jsconfig.json']
-            \}
+" let g:LanguageClient_rootMarkers = {
+            " \'javascript': ['.flowconfig'],
+            " \'typescript': ['tsconfig.json', 'jsconfig.json']
+            " \}
 
