@@ -33,6 +33,7 @@ Plug 'easymotion/vim-easymotion'
 " endif
 Plug 'sheerun/vim-polyglot'
 Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
