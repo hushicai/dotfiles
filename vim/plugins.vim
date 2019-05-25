@@ -32,6 +32,7 @@ Plug 'easymotion/vim-easymotion'
   " Plug 'roxma/vim-hug-neovim-rpc'
 " endif
 Plug 'sheerun/vim-polyglot'
+Plug 'kshenoy/vim-signature'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
