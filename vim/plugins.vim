@@ -20,13 +20,13 @@ Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" if has('nvim')
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+  " Plug 'Shougo/deoplete.nvim'
+  " Plug 'roxma/nvim-yarp'
+  " Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 Plug 'sheerun/vim-polyglot'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
@@ -130,13 +130,13 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 """""""""""""""""""""""""""""""
 "  deoplete                   "
 """""""""""""""""""""""""""""""
-set completeopt-=preview
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources = {'_': ['ale', 'ultisnips']}
-call deoplete#custom#source('ale',
-            \ 'min_pattern_length',
-            \ 4)
-call deoplete#custom#source('ultisnips',
-            \ 'min_pattern_length',
-            \ 2)
+" set completeopt-=preview
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+" let g:deoplete#sources = {'_': ['ale', 'ultisnips']}
+" call deoplete#custom#source('ale',
+            " \ 'min_pattern_length',
+            " \ 4)
+" call deoplete#custom#source('ultisnips',
+            " \ 'min_pattern_length',
+            " \ 2)
