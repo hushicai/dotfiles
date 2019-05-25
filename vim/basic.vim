@@ -55,6 +55,9 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" auto indent
+set autoindent
+
 " Ignore case when searching
 set ignorecase
 
@@ -124,6 +127,10 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+
+" text width
+set textwidth=120
+set colorcolumn=120
 
 " Linebreak on 500 characters
 set lbr
