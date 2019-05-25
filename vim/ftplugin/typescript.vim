@@ -1,6 +1,9 @@
 """""""""""""""""""""""""""""""""""
-"  gle                            "
+"  ale                            "
 """""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-  \   'typescript': ['tsserver'],
+  \   'typescript': ['tsserver', 'eslint'],
+  \}
+let g:ale_fixers = {
+  \   'typescript': ['eslint'],
   \}
