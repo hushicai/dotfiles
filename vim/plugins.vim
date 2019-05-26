@@ -31,6 +31,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
