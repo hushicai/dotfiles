@@ -10,3 +10,10 @@ inoremap <silent> <c-a> <esc>^i
 inoremap <silent> <c-f> <right>
 inoremap <silent> <c-b> <left>
 inoremap <silent> <c-d> <esc><right>xi
+
+" omnifunc
+autocmd Filetype *
+      \   if &omnifunc == "" |
+      \    setlocal omnifunc=syntaxcomplete#Complete |
+      \   endif
+
