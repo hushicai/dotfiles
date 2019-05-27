@@ -32,6 +32,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
+Plug 'ajh17/VimCompletesMe'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -107,18 +108,9 @@ let g:ale_linters_explicit = 1
 nmap <silent> [c <Plug>(ale_previous_wrap)
 nmap <silent> ]c <Plug>(ale_next_wrap)
 
-
-"""""""""""""""""""""""""""""""
-"  tab completion                 "
-"""""""""""""""""""""""""""""""
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-
 """""""""""""""""""""""""""""""
 "  deoplete                   "
 """""""""""""""""""""""""""""""
-" set completeopt-=preview
 " let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_smart_case = 1
 " let g:deoplete#sources = {'_': ['ale', 'ultisnips']}
