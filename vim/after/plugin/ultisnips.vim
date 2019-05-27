@@ -1,34 +1,43 @@
-function! ultisnips#ListSnippets(findstart, base) abort
-	if empty(UltiSnips#SnippetsInCurrentScope(1))
-		return ''
-	endif
+function! SnipComplete()
+    let dict = UltiSnips#SnippetsInCurrentScope()
 
-    if a:findstart
-        " locate the start of the word
-        let line = getline('.')
-        let start = col('.') - 1
-        while start > 0 && (line[start - 1] =~ '\a')
-            let start -= 1
-        endwhile
-        return start
-    else
-        " find classes matching "a:base"
-        let res = []
-        for m in keys(g:current_ulti_dict_info)
-            if m =~ "^" . a:base
-				let n = {
-					\ 'word': m,
-					\ 'menu': '[snip] '. g:current_ulti_dict_info[m]['description']
-					\ }
-                call add(res, n)
-            endif
-        endfor
-        return res
+    if empty(dict)
+        return ''
     endif
+
+    let line = getline('.')
+    let start = col('.') - 1
+
+    while start > 0 && line[start - 1] =~# '\k'
+        let start -= 1
+    endwhile
+
+    let suggestions = []
+
+    for item in keys(dict)
+        let trigger = item
+        let entry = {'word': item, 'menu': '[Snip] ' . dict[item]}
+        call add(suggestions, entry)
+    endfor
+
+    if empty(suggestions)
+        echohl Error | echon 'no match' | echohl None
+    elseif len(suggestions) == 1
+        let pos = getcurpos()
+        if start == 0
+            let str = trigger
+        else
+            let str = line[0:start - 1] . trigger
+        endif
+        call setline('.', str)
+        let pos[2] = len(str) + 1
+        call setpos('.', pos)
+        call UltiSnips#ExpandSnippet()
+    else
+        call complete(start + 1, suggestions)
+    endif
+    return ''
 endfunction
 
-autocmd Filetype *
-      \   if &completefunc == "" |
-      \    setlocal completefunc=ultisnips#ListSnippets |
-      \   endif
+inoremap <c-l> <C-R>=SnipComplete()<CR>
 
