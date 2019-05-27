@@ -13,7 +13,7 @@ let g:ale_fixers = {
 """""""""""""""""""""""""""""""""""""""
 "  ycm                                "
 """""""""""""""""""""""""""""""""""""""
-let g:ycm_semantic_triggers = {
-            \ 'javascript': ['re!\w{4}']
-            \ }
+" let g:ycm_semantic_triggers = {
+            " \ 'javascript': ['re!\w{4}']
+            " \ }
 
