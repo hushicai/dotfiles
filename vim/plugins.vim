@@ -32,7 +32,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
-Plug 'ajh17/VimCompletesMe'
+Plug 'ervandew/supertab'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,3 +120,10 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 " call deoplete#custom#source('ultisnips',
             " \ 'min_pattern_length',
             " \ 2)
+
+
+""""""""""""""""""""""""""""""
+"  supertab                  "
+""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabCrMapping = 1
