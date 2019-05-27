@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""""""
 
 let g:ale_linters = {
-            \ 'javascript': ['eslint'],
+            \ 'javascript': ['flow-language-server', 'eslint'],
             \ }
 let g:ale_fixers = {
             \  'javascript': ['eslint'],
@@ -16,4 +16,3 @@ let g:ale_fixers = {
 " let g:ycm_semantic_triggers = {
             " \ 'javascript': ['re!\w{4}']
             " \ }
-
