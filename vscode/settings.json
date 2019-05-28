@@ -5,7 +5,9 @@
     "vim.useCtrlKeys": true,
     "vim.handleKeys": {
         "<c-o>": false,
-        "<c-i>": false
+        "<c-i>": false,
+        "<c-a>": false,
+        "<c-e>": false
     },
     "vim.insertModeKeyBindings": [
         {
