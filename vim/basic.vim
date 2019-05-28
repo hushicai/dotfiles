@@ -169,15 +169,6 @@ set laststatus=2
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Pressing ,sc will toggle and untoggle spell checking
-map <leader>sc :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
-
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
