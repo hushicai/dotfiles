@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "vim.foldfix": true,
+    "vim.useCtrlKeys": false,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<esc>"]
+        }
+    ],
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0
+}
