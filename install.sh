@@ -21,4 +21,8 @@ if [ -d ~/.oh-my-zsh ]; then
     ln -s ~/dotfiles/zsh ~/.oh-my-zsh/custom
 fi
 
+# vscode
+ln -sf ~/dotfiles/vscode/settings.json  ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ~/dotfiles/vscode/keybindings.json  ~/Library/Application\ Support/Code/User/keybindings.json
+
 echo "Installed the dotfiles successfully!"
