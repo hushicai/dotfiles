@@ -8,6 +8,5 @@
             "after": ["<esc>"]
         }
     ],
-    "breadcrumbs.enabled": true,
-    "window.zoomLevel": 0
+    "breadcrumbs.enabled": true
 }
