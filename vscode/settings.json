@@ -1,12 +1,17 @@
 {
     "workbench.colorTheme": "Solarized Dark",
+    "breadcrumbs.enabled": true,
     "vim.foldfix": true,
-    "vim.useCtrlKeys": false,
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys": {
+        "<c-o>": false,
+        "<c-i>": false
+    },
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "k"],
             "after": ["<esc>"]
         }
     ],
-    "breadcrumbs.enabled": true
+    "vim.leader": ","
 }
