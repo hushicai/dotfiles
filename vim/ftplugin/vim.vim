@@ -1,9 +1,9 @@
 """"""""""""""""""""""""""""""""""""""""""""
 "  settings                                "
 """"""""""""""""""""""""""""""""""""""""""""
-" quick help
- nnoremap <buffer> <leader>h :help <C-r><C-w><CR>
-
+" quick help K
+setlocal keywordprg=:help
+" nnoremap <buffer> K :help <C-r><C-w><CR>
 
 """""""""""""""""""""""""""""""""""""""""""
 "  ale                                    "
