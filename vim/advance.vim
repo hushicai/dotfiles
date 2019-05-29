@@ -11,10 +11,3 @@ inoremap <silent> <c-f> <right>
 inoremap <silent> <c-b> <left>
 inoremap <silent> <c-d> <esc><right>xi
 inoremap <silent> <c-k> <esc>d$i
-
-" omnifunc
-set completeopt-=preview
-autocmd Filetype *
-      \   if &omnifunc == "" |
-      \    setlocal omnifunc=syntaxcomplete#Complete |
-      \   endif
