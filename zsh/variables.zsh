@@ -7,6 +7,6 @@ export PATH=$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$HOM
 # ruby
 export PATH=/usr/local/opt/ruby/bin:$PATH
 if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$(ruby -r rubygems -e 'puts Gem.dir')/bin:$PATH"
 fi
 
