@@ -1,6 +1,7 @@
 {
     "workbench.colorTheme": "Solarized Dark",
     "breadcrumbs.enabled": true,
+    "vim.leader": ",",
     "vim.foldfix": true,
     "vim.useCtrlKeys": true,
     "vim.handleKeys": {
@@ -15,5 +16,5 @@
             "after": ["<esc>"]
         }
     ],
-    "vim.leader": ","
+    "vim.easymotion": true
 }
