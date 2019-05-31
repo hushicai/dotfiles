@@ -128,4 +128,4 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = '<c-p>'
 let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabCrMapping = 1
+" let g:SuperTabCrMapping = 1
