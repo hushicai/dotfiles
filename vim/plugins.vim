@@ -6,7 +6,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['c', 'cpp'] }
 Plug 'mbbill/undotree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -20,19 +19,19 @@ Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
-" if has('nvim')
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-  " Plug 'Shougo/deoplete.nvim'
-  " Plug 'roxma/nvim-yarp'
-  " Plug 'roxma/vim-hug-neovim-rpc'
-" endif
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'Shougo/neco-vim', { 'for': ['vim'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
-Plug 'ervandew/supertab'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -111,21 +110,19 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 """""""""""""""""""""""""""""""
 "  deoplete                   "
 """""""""""""""""""""""""""""""
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#enable_smart_case = 1
-" let g:deoplete#sources = {'_': ['ale', 'ultisnips']}
-" call deoplete#custom#source('ale',
-            " \ 'min_pattern_length',
-            " \ 4)
-" call deoplete#custom#source('ultisnips',
-            " \ 'min_pattern_length',
-            " \ 2)
+set completeopt-=preview
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources = {
+    \ 'vim': ['vim'],
+    \ 'typescript': ['ale', 'ultisnips'],
+    \ 'javascript': ['ale', 'ultisnips']
+    \ }
+call deoplete#custom#source('_',
+            \ 'matchers', ['matcher_head'])
 
-
-""""""""""""""""""""""""""""""
-"  supertab                  "
-""""""""""""""""""""""""""""""
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = '<c-p>'
-let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-" let g:SuperTabCrMapping = 1
+" tab completion
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+"enter completion
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
