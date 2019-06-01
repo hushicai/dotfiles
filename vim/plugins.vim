@@ -114,9 +114,8 @@ set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources = {
+    \ '_': ['ale', 'ultisnips'],
     \ 'vim': ['vim'],
-    \ 'typescript': ['ale', 'ultisnips'],
-    \ 'javascript': ['ale', 'ultisnips']
     \ }
 call deoplete#custom#source('_',
             \ 'matchers', ['matcher_head'])
