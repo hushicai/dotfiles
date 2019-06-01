@@ -3,8 +3,8 @@ function! ale#setup()
 	for l:linter in ale#linter#Get(&filetype) | if !empty(l:linter.lsp) | let l:lsp_found=1 | endif | endfor
 	if (l:lsp_found)
         setlocal omnifunc=ale#completion#OmniFunc
-        nnoremap <buffer> <silent> gd <Plug>(ale_go_to_definition)
-        nnoremap <buffer> <silent> gf <Plug>(ale_find_references)
+        nmap <buffer><silent><leader>gd <Plug>(ale_go_to_definition)
+        nmap <buffer><silent><leader>gf <Plug>(ale_find_references)
 	endif
 endfunction
 autocmd BufEnter * call ale#setup()
