@@ -11,16 +11,15 @@ let g:deoplete_filetype = [
             \]
 call plug#begin('~/.plugged')
 Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeFromBookmark'] }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeFromBookmark' ] }
 Plug 'scrooloose/nerdcommenter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jiangmiao/auto-pairs'
+Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
