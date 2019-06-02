@@ -4,6 +4,7 @@ setopt histreduceblanks
 # Remove command lines from the history list when the first character on the
 # line is a space, or when one of the expanded aliases contains a leading space
 setopt histignorespace
-# Do not enter command lines into the history list if they are duplicates of the
-# previous event.
+# ignore dups
+# https://github.com/junegunn/fzf/issues/600
 setopt histignorealldups
+setopt histfindnodups
