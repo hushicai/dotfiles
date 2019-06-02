@@ -40,6 +40,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale', { 'for': g:deoplete_filetype }
 Plug 'mhinz/vim-startify'
+Plug 'terryma/vim-expand-region'
 call plug#end()
 
 
@@ -110,3 +111,21 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 "enter completion
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+
+"""""""""""""""""""""""""""""""""""
+"  vim expand region              "
+"""""""""""""""""""""""""""""""""""
+let g:expand_region_text_objects = {
+            \ 'iw'  :0,
+            \ 'i"'  :0,
+            \ 'i''' :0,
+            \ 'i]'  :1,
+            \ 'ib'  :1,
+            \ 'iB'  :1,
+            \ 'ip'  :0,
+            \ 'a]'  :1,
+            \ 'ab'  :1,
+            \ 'aB'  :1,
+            \ }
+
