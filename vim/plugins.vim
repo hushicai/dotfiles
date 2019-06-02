@@ -9,6 +9,7 @@ let g:deoplete_filetype = [
             \ 'typescript',
             \ 'typescript.jsx'
             \]
+let g:ale_filetype = g:deoplete_filetype + ['json']
 call plug#begin('~/.plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeFromBookmark' ] }
@@ -38,7 +39,7 @@ Plug 'Shougo/neco-vim', { 'for': ['vim'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale', { 'for': g:deoplete_filetype }
+Plug 'w0rp/ale', { 'for': g:ale_filetype }
 Plug 'mhinz/vim-startify'
 Plug 'terryma/vim-expand-region'
 call plug#end()

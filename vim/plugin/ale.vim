@@ -1,7 +1,9 @@
 let s:ale_loaded = 0
+let s:ale_javascript_linters = ['tsserver', 'flow-language-server', 'eslint']
+let s:ale_javascript_fixers = ['eslint']
 
 function! s:setup_ale()
-    if index(g:deoplete_filetype, &filetype) == -1 || s:ale_loaded
+    if index(g:ale_filetype, &filetype) == -1 || s:ale_loaded
         return
     endif
     let s:ale_loaded = 1
@@ -15,12 +17,25 @@ function! s:setup_ale()
     let g:ale_sign_warning = '⚠'
     let g:ale_fix_on_save = 1
     let g:ale_linters_explicit = 1
+    let g:ale_typescript_tsserver_config_path = '~/dotfiles/tsconfig.json'
+    let g:ale_linters = {
+                \ 'javascript': s:ale_javascript_linters,
+                \ 'javascript.jsx': s:ale_javascript_linters,
+                \ 'typescript': s:ale_javascript_linters,
+                \ 'typescript.jsx': s:ale_javascript_linters
+                \ }
+    let g:ale_fixers = {
+                \ 'javascript': s:ale_javascript_fixers,
+                \ 'javascript.jsx': s:ale_javascript_fixers,
+                \ 'typescript': s:ale_javascript_fixers,
+                \ 'typescript.jsx': s:ale_javascript_fixers
+                \}
     nmap <silent> [c <Plug>(ale_previous_wrap)
     nmap <silent> ]c <Plug>(ale_next_wrap)
 endfunction
 
 function! s:setup_ale_lsp()
-    if index(g:deoplete_filetype, &filetype) == -1
+    if index(g:ale_filetype, &filetype) == -1
         return
     endif
     let s:ale_lsp_loaded = 1
