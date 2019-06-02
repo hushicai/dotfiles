@@ -1,9 +1,17 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM Plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_filetype = ['c', 'cpp']
+let g:deoplete_filetype = [
+            \ 'vim',
+            \ 'javascript',
+            \ 'javascript.jsx',
+            \ 'typescript',
+            \ 'typescript.jsx'
+            \]
 call plug#begin('~/.plugged')
 Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeFromBookmark'] }
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
@@ -19,20 +27,22 @@ Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': g:ycm_filetype, 'on': [] }
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': g:deoplete_filetype }
 else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim', { 'for': g:deoplete_filetype }
+  Plug 'roxma/nvim-yarp', { 'for': g:deoplete_filetype }
+  Plug 'roxma/vim-hug-neovim-rpc', { 'for': g:deoplete_filetype }
 endif
 Plug 'Shougo/neco-vim', { 'for': ['vim'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'for': g:deoplete_filetype }
 Plug 'mhinz/vim-startify'
 call plug#end()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => colorscheme
@@ -91,35 +101,11 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 nmap s <Plug>(easymotion-overwin-f2)
 
-""""""""""""""""""""""""""""""""
-"  ale                         "
-""""""""""""""""""""""""""""""""
-let g:ale_completion_delay = 500
-let g:ale_echo_delay = 20
-let g:ale_lint_delay = 500
-let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_fix_on_save = 1
-let g:ale_linters_explicit = 1
-nmap <silent> [c <Plug>(ale_previous_wrap)
-nmap <silent> ]c <Plug>(ale_next_wrap)
 
-"""""""""""""""""""""""""""""""
-"  deoplete                   "
-"""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""
+"  general completion settings  "
+"""""""""""""""""""""""""""""""""
 set completeopt-=preview
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources = {
-    \ '_': ['ale', 'ultisnips'],
-    \ 'vim': ['vim'],
-    \ }
-call deoplete#custom#source('_',
-            \ 'matchers', ['matcher_head'])
-
 " tab completion
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"

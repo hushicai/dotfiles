@@ -1,4 +1,3 @@
-
 " Quick edit
 noremap <leader>ee :e $MYVIMRC<cr>
 " Quick re-source
