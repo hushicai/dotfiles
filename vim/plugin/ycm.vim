@@ -1,7 +1,10 @@
-function! ycm#setup()
-    if index(g:ycm_filetype, &filetype) == -1
+let s:ycm_loaded = 0
+
+function! s:setup_ycm()
+    if index(g:ycm_filetype, &filetype) == -1 || s:ycm_loaded
         return
     endif
+    let s:ycm_loaded = 1
     call plug#load('YouCompleteMe')
     let g:ycm_add_preview_to_completeopt = 0
     let g:ycm_min_num_identifier_candidate_chars = 2
@@ -15,5 +18,5 @@ endfunction
 
 augroup x_ycm_filetype
     autocmd!
-    autocmd FileType * call ycm#setup()
+    autocmd FileType * call s:setup_ycm()
 augroup END

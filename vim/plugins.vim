@@ -29,9 +29,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': g:ycm_filetype, 'on': [] }
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': g:deoplete_filetype }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': g:deoplete_filetype, 'on': [] }
 else
-  Plug 'Shougo/deoplete.nvim', { 'for': g:deoplete_filetype }
+  Plug 'Shougo/deoplete.nvim', { 'for': g:deoplete_filetype, 'on': [] }
   Plug 'roxma/nvim-yarp', { 'for': g:deoplete_filetype }
   Plug 'roxma/vim-hug-neovim-rpc', { 'for': g:deoplete_filetype }
 endif
