@@ -17,5 +17,7 @@
             "after": ["<esc>"]
         }
     ],
-    "vim.easymotion": true
+    "vim.easymotion": true,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single"
 }
