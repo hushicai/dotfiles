@@ -21,6 +21,12 @@ brew install ruby
 gem install --user neovim
 ```
 
+* depot_tools
+
+```bash
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git ~/depot_toos
+```
+
 ## install
 
 ```bash
