@@ -19,5 +19,9 @@
     ],
     "vim.easymotion": true,
     "javascript.preferences.quoteStyle": "single",
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.preferences.quoteStyle": "single",
+    "leetcode.endpoint": "leetcode-cn",
+    "leetcode.hint.commentDescription": false,
+    "leetcode.defaultLanguage": "javascript",
+    "leetcode.outputFolder": "src"
 }
