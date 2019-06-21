@@ -53,6 +53,12 @@ cd ~/dotfiles
 git pull --rebase
 ```
 
+## QA
+
+* `zsh docker plugins` not wroking?
+
+    > https://github.com/docker/cli/issues/263
+
 ## references
 
 * [vim-galore](https://github.com/mhinz/vim-galore)
