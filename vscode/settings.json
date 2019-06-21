@@ -23,5 +23,6 @@
     "leetcode.endpoint": "leetcode-cn",
     "leetcode.hint.commentDescription": false,
     "leetcode.defaultLanguage": "javascript",
-    "leetcode.outputFolder": "src"
+    "leetcode.outputFolder": "src",
+    "editor.suggest.snippetsPreventQuickSuggestions": false
 }
