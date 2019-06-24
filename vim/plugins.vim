@@ -1,15 +1,13 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM Plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_filetype = ['c', 'cpp']
-let g:deoplete_filetype = [
+let g:ale_filetype = [
             \ 'vim',
             \ 'javascript',
-            \ 'javascript.jsx',
-            \ 'typescript',
-            \ 'typescript.jsx'
-            \]
-let g:ale_filetype = g:deoplete_filetype + ['json']
+            \ 'javascript.jsx', 
+            \ 'typescript', 
+            \ 'typescript.jsx',
+            \ 'json']
 call plug#begin('~/.plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeFromBookmark' ] }
@@ -27,15 +25,6 @@ Plug 'tpope/vim-fugitive'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': g:ycm_filetype, 'on': [] }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': g:deoplete_filetype, 'on': [] }
-else
-  Plug 'Shougo/deoplete.nvim', { 'for': g:deoplete_filetype, 'on': [] }
-  Plug 'roxma/nvim-yarp', { 'for': g:deoplete_filetype }
-  Plug 'roxma/vim-hug-neovim-rpc', { 'for': g:deoplete_filetype }
-endif
-Plug 'Shougo/neco-vim', { 'for': ['vim'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
