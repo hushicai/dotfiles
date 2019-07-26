@@ -55,9 +55,9 @@ git pull --rebase
 
 ## QA
 
-* `zsh docker plugins` not wroking?
+* zsh plugins not wroking?
 
-    > https://github.com/docker/cli/issues/263
+    > rm ~/.zcompdump*
 
 ## references
 
