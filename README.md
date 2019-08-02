@@ -14,13 +14,6 @@ brew install fzf
 brew install ripgrep
 ```
 
-* ruby
-
-```bash
-brew install ruby
-gem install --user neovim
-```
-
 * depot_tools
 
 ```bash
