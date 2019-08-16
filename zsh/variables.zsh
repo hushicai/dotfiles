@@ -6,7 +6,7 @@ export PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
 # android
 export JAVA_HOME=`/usr/libexec/java_home`
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$HOME/flutter/bin:$PATH
+export PATH=$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$HOME/flutter/bin:$PATH
 
 # ruby
 export PATH=/usr/local/opt/ruby/bin:$PATH
