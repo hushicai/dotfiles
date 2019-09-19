@@ -2,19 +2,19 @@
 
 ## dependencies
 
-* [fzf](https://github.com/junegunn/fzf)
+- [fzf](https://github.com/junegunn/fzf)
 
 ```bash
 brew install fzf
 ```
- 
-* [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ```bash
 brew install ripgrep
 ```
 
-* depot_tools
+- depot_tools
 
 ```bash
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git ~/depot_toos
@@ -48,10 +48,14 @@ git pull --rebase
 
 ## QA
 
-* zsh plugins not wroking?
+- zsh plugins not wroking?
 
-    > rm ~/.zcompdump*
+  > rm ~/.zcompdump\*
+
+- ideaVim key mappings not work?
+
+  > checkout Android Studio `Editor -> Vim Emulation`, this is all the conflict shortcuts, change the handler to vim, now the key mappings should work.
 
 ## references
 
-* [vim-galore](https://github.com/mhinz/vim-galore)
+- [vim-galore](https://github.com/mhinz/vim-galore)
