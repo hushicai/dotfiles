@@ -1,8 +1,3 @@
-" Quick edit
-noremap <leader>ee :e $MYVIMRC<cr>
-" Quick re-source
-noremap <Leader>ss :source $MYVIMRC<cr>
-
 " shell like moving
 inoremap <silent> <c-e> <esc>$a
 inoremap <silent> <c-a> <esc>^i
