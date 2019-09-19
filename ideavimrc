@@ -5,6 +5,9 @@
 " basic
 source ~/dotfiles/vim/basic.vim
 
+" advance
+source ~/dotfiles/vim/advance.vim
+
 " Forward
 map <c-i> :action Forward<CR>
 " action: Forward
