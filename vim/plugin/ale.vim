@@ -17,7 +17,6 @@ function! s:setup_ale()
     let g:ale_sign_warning = '⚠'
     let g:ale_fix_on_save = 1
     let g:ale_linters_explicit = 1
-    let g:ale_typescript_tsserver_config_path = '~/dotfiles/tsconfig.json'
     let g:ale_linters = {
                 \ 'javascript': s:ale_javascript_linters,
                 \ 'javascript.jsx': s:ale_javascript_linters,
