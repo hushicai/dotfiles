@@ -24,5 +24,6 @@
     "leetcode.hint.commentDescription": false,
     "leetcode.defaultLanguage": "javascript",
     "leetcode.outputFolder": "src",
-    "editor.suggest.snippetsPreventQuickSuggestions": false
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "code-runner.runInTerminal": true
 }
