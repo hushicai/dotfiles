@@ -86,4 +86,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # pm2
-. <(pm2 completion)
+ source ~/dotfiles/zsh/pm2.zsh
