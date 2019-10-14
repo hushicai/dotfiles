@@ -26,7 +26,7 @@ mkdir -p ~/Library/Application\ Support/Code/User
 ln -sf ~/dotfiles/vscode/settings.json  ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ~/dotfiles/vscode/keybindings.json  ~/Library/Application\ Support/Code/User/keybindings.json
 
-#jetbrains
+# jetbrains
 android_studio_path=`find ~/Library/Preferences/ -name "AndroidStudio*"`
 if [[ -d $android_studio_path && -d $android_studio_path/options ]]; then
     ln -sf ~/dotfiles/jetbrains/vim_settings.xml $android_studio_path/options/vim_settings.xml;
@@ -35,5 +35,9 @@ clion_path=`find ~/library/preferences/ -name "clion*" | head -n 1`
 if [[ -d $clion_path && -d $clion_path/options ]]; then
     ln -sf ~/dotfiles/jetbrains/vim_settings.xml $clion_path/options/vim_settings.xml;
 fi
+
+# xcode
+ln -sf ~/dotfiles/xcode/custom.idekeybindings ~/Library/Developer/Xcode/UserData/KeyBindings/custom.idekeybindings
+defaults write com.apple.dt.Xcode IDEKeyBindingCurrentPreferenceSet -string custom.idekeybindings
 
 echo "Installed the dotfiles successfully!"
