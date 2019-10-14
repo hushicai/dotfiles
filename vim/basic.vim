@@ -125,10 +125,6 @@ set autoindent "Auto indent
 set smartindent "Smart indent
 set wrap "Wrap lines
 
-" local vimrc
-set exrc
-set secure
-
 " Specify the behavior when switching between buffers 
 try
   set switchbuf=useopen,usetab,newtab
