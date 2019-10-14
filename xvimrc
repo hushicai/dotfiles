@@ -2,8 +2,108 @@
 "  xvim                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-" basic
-source ~/dotfiles/vim/basic.vim
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ','
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+
+" Always show current position
+set ruler
+
+" Always show line numbers
+set number
+
+" A buffer becomes hidden when it is abandoned
+set hidden
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch 
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+
+" Enable syntax highlighting
+syntax enable 
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set fileformats=unix,dos,mac
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" text width
+set textwidth=120
+set colorcolumn=120
+
+" Linebreak on 500 characters
+set linebreak
+set textwidth=500
+
+" Auto indent
+set autoindent
+" Smart indent
+set smartindent
+" Wrap lines
+set wrap 
+
+" Specify the behavior when switching between buffers 
+try
+  set switchbuf=useopen,usetab,newtab
+  set showtabline=2
+catch
+endtry
+
+" Always show the status line
+set laststatus=2
+
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+" Quick <ESC>
+inoremap jk <ESC>
+
+" clear last search highlight
+map <silent> <leader><space> :nohlsearch<CR>
 
 " navigation
 map <C-i> :xccmd goForwardInHistoryByCommand<CR>
