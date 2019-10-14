@@ -121,9 +121,12 @@ set colorcolumn=120
 set linebreak
 set textwidth=500
 
-set autoindent "Auto indent
-set smartindent "Smart indent
-set wrap "Wrap lines
+" Auto indent
+set autoindent
+" Smart indent
+set smartindent
+" Wrap lines
+set wrap 
 
 " Specify the behavior when switching between buffers 
 try
