@@ -108,3 +108,6 @@ map <silent> <leader><space> :nohlsearch<CR>
 " navigation
 map <C-i> :xccmd goForwardInHistoryByCommand<CR>
 map <C-o> :xccmd goBackInHistoryByCommand<CR>
+
+" Emulate Comamnd + P
+noremap <D-p> :xccmd openQuickly<CR>
