@@ -16,11 +16,6 @@ set autoread
 " like <leader>w saves the current file
 let mapleader = ','
 
-" :W sudo saves the file 
-" (useful for handling the permission-denied error)
-command! W w !sudo tee % > /dev/null
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,15 +129,6 @@ set wrap "Wrap lines
 set exrc
 set secure
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
 " Specify the behavior when switching between buffers 
 try
   set switchbuf=useopen,usetab,newtab
@@ -155,9 +141,6 @@ set laststatus=2
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
 
 " Quick <ESC>
 inoremap jk <ESC>
