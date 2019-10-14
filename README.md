@@ -1,25 +1,5 @@
 # vimrc
 
-## dependencies
-
-- [fzf](https://github.com/junegunn/fzf)
-
-```bash
-brew install fzf
-```
-
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-
-```bash
-brew install ripgrep
-```
-
-- depot_tools
-
-```bash
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git ~/depot_toos
-```
-
 ## install
 
 ```bash
@@ -59,3 +39,4 @@ git pull --rebase
 ## references
 
 - [vim-galore](https://github.com/mhinz/vim-galore)
+- [keith/dotfiles](https://github.com/keith/dotfiles)
