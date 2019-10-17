@@ -10,13 +10,9 @@ source ~/dotfiles/vim/advance.vim
 
 " Forward
 map <c-i> :action Forward<CR>
-" action: Forward
-" shorcut: ⌘]
 
 " Back
 map <c-o> :action Back<CR>
-" action: Back
-" shortcut: ⌘[
 
 " GotoFile
 map <M-p> :action GotoFile<CR>
