@@ -37,7 +37,10 @@ if [[ -d $clion_path && -d $clion_path/options ]]; then
 fi
 
 # xcode
-ln -sf ~/dotfiles/xcode/custom.idekeybindings ~/Library/Developer/Xcode/UserData/KeyBindings/custom.idekeybindings
+xcode_ide_key_binds_path=~/Library/Developer/Xcode/UserData/KeyBindings/custom.idekeybindings
+if [[ -d $xcode_ide_key_binds_path ]]; then
+ln -sf ~/dotfiles/xcode/custom.idekeybindings $xcode_ide_key_binds_path
 defaults write com.apple.dt.Xcode IDEKeyBindingCurrentPreferenceSet -string custom.idekeybindings
+fi
 
 echo "Installed the dotfiles successfully!"
